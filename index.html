@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function Call Stack Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Function Call Stack Visualization</h1>
+
+    <div class="container">
+        <!-- Left Panel: Stack of To-Do Lists -->
+        <div class="left-panel">
+            <div id="stack-container">
+                <!-- To-do lists will be dynamically added here -->
+            </div>
+        </div>
+
+        <!-- Right Panel: Add New List & Printed Titles -->
+        <div class="right-panel">
+            <div class="new-list-form">
+                <h2>Add New List</h2>
+                <input type="text" id="list-name-input" placeholder="Enter list name">
+                <button id="add-list-button">Add List</button>
+            </div>
+            <div class="printed-titles">
+                <h2>Printed Titles</h2>
+                <div id="printed-titles-display"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

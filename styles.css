@@ -30,8 +30,7 @@ h1 {
 
 #stack-container {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    flex-direction: column; /* Existing lists stack below the new one */
 }
 
 .list {
@@ -39,6 +38,11 @@ h1 {
     padding: 15px;
     margin-bottom: 10px;
     background-color: #f9f9f9;
+    transition: transform 0.3s ease-in-out; /* Smooth movement */
+}
+
+.list.move-down {
+    transform: translateY(50px); /* Move down slightly */
 }
 
 .list-header {

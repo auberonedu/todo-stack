@@ -11,8 +11,16 @@ document.addEventListener('DOMContentLoaded', function() {
         'Check right'
     ];
 
-    // Event listener for adding a new list
-    addListButton.addEventListener('click', function() {
+    // Event listener for adding a new list with button or Enter key
+    addListButton.addEventListener('click', addListFromInput);
+    listNameInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            addListFromInput();
+        }
+    });
+
+    // Function to add a new list from input
+    function addListFromInput() {
         const listName = listNameInput.value.trim();
         if (listName !== '') {
             addNewList(listName);
@@ -20,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             alert('Please enter a list name.');
         }
-    });
+    }
 
     // Function to add a new list to the stack
     function addNewList(name) {
@@ -80,7 +88,22 @@ document.addEventListener('DOMContentLoaded', function() {
         listDiv.appendChild(listHeader);
         listDiv.appendChild(itemsDiv);
 
-        // Insert the new list at the top of the stack
-        stackContainer.insertBefore(listDiv, stackContainer.firstChild);
+        // Add animation to stack
+        animateStackBeforeAdding(() => {
+            stackContainer.insertBefore(listDiv, stackContainer.firstChild);
+        });
+    }
+
+    // Function to animate the stack moving down
+    function animateStackBeforeAdding(callback) {
+        // Temporarily add a class to existing lists for animation
+        const existingLists = stackContainer.querySelectorAll('.list');
+        existingLists.forEach(list => list.classList.add('move-down'));
+
+        // Wait for animation to complete, then execute callback
+        setTimeout(() => {
+            existingLists.forEach(list => list.classList.remove('move-down'));
+            callback();
+        }, 300); // Match the duration of the CSS animation
     }
 });

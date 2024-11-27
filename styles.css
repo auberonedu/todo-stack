@@ -1,230 +1,133 @@
+/* General styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-h1 {
+  }
+  
+  h1 {
     text-align: center;
     padding: 20px 0;
-}
-
-.container {
+  }
+  
+  .container {
     display: flex;
     height: calc(100vh - 80px);
-}
-
-.left-panel, .right-panel {
+  }
+  
+  .left-panel, .right-panel {
     padding: 20px;
     overflow-y: auto;
-}
-
-.left-panel {
+  }
+  
+  .left-panel {
     width: 60%;
     border-right: 1px solid #ccc;
-}
-
-.right-panel {
+  }
+  
+  .right-panel {
     width: 40%;
-}
-
-#stack-container {
+  }
+  
+  /* Stack container */
+  #stack-container {
     display: flex;
     flex-direction: column; /* Existing lists stack below the new one */
-}
-
-.list {
+  }
+  
+  /* List styles */
+  .list {
     border: 1px solid #000;
     padding: 15px;
     margin-bottom: 10px;
     background-color: #f9f9f9;
     transition: transform 0.3s ease-in-out; /* Smooth movement */
-}
-
-.list.move-down {
+  }
+  
+  .list.move-down {
     transform: translateY(50px); /* Move down slightly */
-}
-
-.list-header {
+  }
+  
+  .list-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.list-title {
+  }
+  
+  .list-title {
+    font-size: 1.6em; /* Bigger title for each todo list */
     font-weight: bold;
-    font-size: 1.2em;
-}
-
-.list-header button {
-    margin-left: 5px;
-    font-size: 1.1em; /* Bigger button text */
-}
-
-.list-items {
+  }
+  
+  /* List items */
+  .list-items {
     margin-top: 15px;
-}
-
-.list-item {
+  }
+  
+  .list-item {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
-}
-
-.list-item input[type="checkbox"] {
+  }
+  
+  .list-item input[type="checkbox"] {
     margin-right: 10px;
-}
-
-.list-item label {
-    font-size: 1.1em; /* Bigger item text */
-}
-
-.new-list-form {
+  }
+  
+  .list-item label {
+    font-size: 1.4em; /* Bigger individual items */
+    text-decoration: none; /* Default text-decoration */
+  }
+  
+  .list-item label[style*="text-decoration: line-through"] {
+    color: gray; /* Optional: Dim text when struck through */
+  }
+  
+  /* Button styling */
+  button {
+    font-size: 1.4em; /* Bigger text on all buttons */
+    padding: 10px 15px; /* Adjust padding for larger buttons */
+  }
+  
+  .finish-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* New list form */
+  .new-list-form {
     margin-bottom: 30px;
-}
-
-.new-list-form input {
+  }
+  
+  .new-list-form input {
     width: calc(100% - 110px);
     padding: 5px;
     margin-right: 10px;
-}
-
-#printed-titles-display {
+  }
+  
+  /* Printed titles */
+  #printed-titles-display {
     border: 1px solid #000;
     padding: 10px;
     height: 300px;
     overflow-y: auto;
     background-color: #fff;
-    font-size: 1.2em; /* Bigger print output */
-}
-
-/* Styles for the initial setup form */
-#initial-setup {
+    font-size: 1.4em; /* Bigger print output */
+  }
+  
+  /* Initial setup form */
+  #initial-setup {
     text-align: center;
     margin: 20px;
-}
-
-#initial-setup textarea {
+  }
+  
+  #initial-setup textarea {
     width: 80%;
-    font-size: 1em;
-}
-
-#start-visualization-button {
-    font-size: 1.1em;
-    padding: 5px 10px;
-    margin-top: 10px;
-}
-
-/* Updated styles for larger text and strike-through effects */
-textarea,
-input[type="text"] {
-  font-size: 1.2em;
-}
-
-textarea {
-  width: 80%;
-}
-
-.list-item label {
-  font-size: 1.1em;
-  text-decoration: none; /* Default text-decoration */
-}
-
-.list-item label[style*="text-decoration: line-through"] {
-  color: gray; /* Optional: Dim text when struck through */
-}
-
-.finish-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-
-/* General text styling */
-textarea,
-input[type="text"] {
-  font-size: 1.4em; /* Bigger text in textboxes */
-}
-
-textarea {
-  width: 80%;
-}
-
-/* Todo list title styling */
-.list-title {
-  font-size: 1.6em; /* Bigger title for each todo list */
-  font-weight: bold;
-}
-
-/* Todo list item styling */
-.list-item label {
-  font-size: 1.4em; /* Bigger individual items */
-  text-decoration: none; /* Default text-decoration */
-}
-
-.list-item label[style*="text-decoration: line-through"] {
-  color: gray; /* Optional: Dim text when struck through */
-}
-
-/* Button styling */
-button {
-  font-size: 1.4em; /* Bigger text on all buttons */
-  padding: 10px 15px; /* Adjust padding for larger buttons */
-}
-
-.finish-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-
-/* General text styling */
-textarea,
-input[type="text"] {
-  font-size: 1.4em; /* Bigger text in textboxes */
-}
-
-textarea {
-  width: 80%;
-}
-
-/* Todo list title styling */
-.list-title {
-  font-size: 1.6em; /* Bigger title for each todo list */
-  font-weight: bold;
-}
-
-/* Todo list item styling */
-.list-item label {
-  font-size: 1.4em; /* Bigger individual items */
-  text-decoration: none; /* Default text-decoration */
-}
-
-.list-item label[style*="text-decoration: line-through"] {
-  color: gray; /* Optional: Dim text when struck through */
-}
-
-/* Button styling */
-button {
-  font-size: 1.4em; /* Bigger text on all buttons */
-  padding: 10px 15px; /* Adjust padding for larger buttons */
-}
-
-/* Ensure disabled buttons look consistent if reused */
-.finish-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-/* Animations for stack items */
-.list {
-  border: 1px solid #000;
-  padding: 15px;
-  margin-bottom: 10px;
-  background-color: #f9f9f9;
-  transition: transform 0.3s ease-in-out; /* Smooth movement */
-}
-
-.list.move-down {
-  transform: translateY(50px); /* Move down slightly */
-}
+    font-size: 1.4em; /* Bigger text in textboxes */
+  }
+  
+  #start-visualization-button {
+    font-size: 1.4em; /* Bigger text on all buttons */
+    padding: 10px 15px; /* Adjust padding for consistency */
+  }
+  

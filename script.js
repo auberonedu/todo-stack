@@ -72,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const finishButton = document.createElement('button');
       finishButton.textContent = 'Finished';
       finishButton.className = 'finish-button';
-      finishButton.disabled = true; // Initially disabled
       finishButton.style.display = 'none'; // Hidden for non-top items
       finishButton.addEventListener('click', function () {
         stackContainer.removeChild(listDiv);
@@ -101,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function () {
           } else {
             label.style.textDecoration = 'none';
           }
-          updateFinishButtonState(listDiv); // Check if all items are checked
         });
   
         const label = document.createElement('label');
@@ -154,14 +152,6 @@ document.addEventListener('DOMContentLoaded', function () {
           finishButton.style.display = 'none'; // Hide for other items
         }
       });
-    }
-  
-    // Update the state of the "Finished" button for a list
-    function updateFinishButtonState(listDiv) {
-      const checkboxes = listDiv.querySelectorAll('.list-item input[type="checkbox"]');
-      const finishButton = listDiv.querySelector('.finish-button');
-      const allChecked = Array.from(checkboxes).every((checkbox) => checkbox.checked);
-      finishButton.disabled = !allChecked; // Enable if all items are checked
     }
   });
   

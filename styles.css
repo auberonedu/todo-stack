@@ -139,3 +139,92 @@ textarea {
   cursor: not-allowed;
 }
 
+
+/* General text styling */
+textarea,
+input[type="text"] {
+  font-size: 1.4em; /* Bigger text in textboxes */
+}
+
+textarea {
+  width: 80%;
+}
+
+/* Todo list title styling */
+.list-title {
+  font-size: 1.6em; /* Bigger title for each todo list */
+  font-weight: bold;
+}
+
+/* Todo list item styling */
+.list-item label {
+  font-size: 1.4em; /* Bigger individual items */
+  text-decoration: none; /* Default text-decoration */
+}
+
+.list-item label[style*="text-decoration: line-through"] {
+  color: gray; /* Optional: Dim text when struck through */
+}
+
+/* Button styling */
+button {
+  font-size: 1.4em; /* Bigger text on all buttons */
+  padding: 10px 15px; /* Adjust padding for larger buttons */
+}
+
+.finish-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+/* General text styling */
+textarea,
+input[type="text"] {
+  font-size: 1.4em; /* Bigger text in textboxes */
+}
+
+textarea {
+  width: 80%;
+}
+
+/* Todo list title styling */
+.list-title {
+  font-size: 1.6em; /* Bigger title for each todo list */
+  font-weight: bold;
+}
+
+/* Todo list item styling */
+.list-item label {
+  font-size: 1.4em; /* Bigger individual items */
+  text-decoration: none; /* Default text-decoration */
+}
+
+.list-item label[style*="text-decoration: line-through"] {
+  color: gray; /* Optional: Dim text when struck through */
+}
+
+/* Button styling */
+button {
+  font-size: 1.4em; /* Bigger text on all buttons */
+  padding: 10px 15px; /* Adjust padding for larger buttons */
+}
+
+/* Ensure disabled buttons look consistent if reused */
+.finish-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Animations for stack items */
+.list {
+  border: 1px solid #000;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease-in-out; /* Smooth movement */
+}
+
+.list.move-down {
+  transform: translateY(50px); /* Move down slightly */
+}

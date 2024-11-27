@@ -97,3 +97,20 @@ h1 {
     background-color: #fff;
     font-size: 1.2em; /* Bigger print output */
 }
+
+/* Styles for the initial setup form */
+#initial-setup {
+    text-align: center;
+    margin: 20px;
+}
+
+#initial-setup textarea {
+    width: 80%;
+    font-size: 1em;
+}
+
+#start-visualization-button {
+    font-size: 1.1em;
+    padding: 5px 10px;
+    margin-top: 10px;
+}

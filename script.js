@@ -1,15 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const initialSetup = document.getElementById('initial-setup');
+    const todoItemsInput = document.getElementById('todo-items-input');
+    const startVisualizationButton = document.getElementById('start-visualization-button');
+
+    const mainContainer = document.getElementById('main-container');
     const stackContainer = document.getElementById('stack-container');
     const addListButton = document.getElementById('add-list-button');
     const listNameInput = document.getElementById('list-name-input');
     const printedTitlesDisplay = document.getElementById('printed-titles-display');
 
-    // Hard-coded items for each to-do list
-    const listItems = [
-        'Print value',
-        'Check left',
-        'Check right'
-    ];
+    let listItems = [];
+
+    // Event listener for starting the visualization
+    startVisualizationButton.addEventListener('click', function() {
+        const itemsText = todoItemsInput.value.trim();
+        if (itemsText !== '') {
+            listItems = itemsText.split('\n').map(item => item.trim()).filter(item => item !== '');
+            if (listItems.length > 0) {
+                initialSetup.style.display = 'none';
+                mainContainer.style.display = 'block';
+            } else {
+                alert('Please enter at least one to-do item.');
+            }
+        } else {
+            alert('Please enter at least one to-do item.');
+        }
+    });
 
     // Event listener for adding a new list with button or Enter key
     addListButton.addEventListener('click', addListFromInput);
@@ -26,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             addNewList(listName);
             listNameInput.value = '';
         } else {
-            alert('Please enter a list name.');
+            alert('Please enter a value.');
         }
     }
 

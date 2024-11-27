@@ -30,7 +30,8 @@ h1 {
 
 #stack-container {
     display: flex;
-    flex-direction: column-reverse; /* New lists appear on top */
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .list {

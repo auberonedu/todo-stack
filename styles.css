@@ -58,6 +58,7 @@ h1 {
 
 .list-header button {
     margin-left: 5px;
+    font-size: 1.1em; /* Bigger button text */
 }
 
 .list-items {
@@ -72,6 +73,10 @@ h1 {
 
 .list-item input[type="checkbox"] {
     margin-right: 10px;
+}
+
+.list-item label {
+    font-size: 1.1em; /* Bigger item text */
 }
 
 .new-list-form {
@@ -90,4 +95,5 @@ h1 {
     height: 300px;
     overflow-y: auto;
     background-color: #fff;
+    font-size: 1.2em; /* Bigger print output */
 }

@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create main list container
         const listDiv = document.createElement('div');
         listDiv.className = 'list';
+        listDiv.style.backgroundColor = generateRandomPastelColor(); // Set random pastel background
 
         // Create list header with title and buttons
         const listHeader = document.createElement('div');
@@ -92,6 +93,14 @@ document.addEventListener('DOMContentLoaded', function() {
         animateStackBeforeAdding(() => {
             stackContainer.insertBefore(listDiv, stackContainer.firstChild);
         });
+    }
+
+    // Function to generate a random pastel color
+    function generateRandomPastelColor() {
+        const r = Math.floor(Math.random() * 128 + 128); // Light red
+        const g = Math.floor(Math.random() * 128 + 128); // Light green
+        const b = Math.floor(Math.random() * 128 + 128); // Light blue
+        return `rgb(${r}, ${g}, ${b})`;
     }
 
     // Function to animate the stack moving down

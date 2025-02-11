@@ -9,11 +9,30 @@
 
     <h1>Function Call Stack Visualization</h1>
 
-    <!-- Initial Form to Define To-Do Items -->
+    <!-- Initial Form to Define To-Do Items & Settings -->
     <div id="initial-setup">
         <h2>Define To-Do Items</h2>
         <p>Enter the items that will appear in each to-do list:</p>
-        <textarea id="todo-items-input" rows="5" cols="50" placeholder="Enter each item on a new line"></textarea><br>
+        <textarea id="todo-items-input" rows="5" cols="50" placeholder="Enter each item on a new line"></textarea>
+        <br><br>
+
+        <!-- New Checkboxes for Return Value and Local Variables -->
+        <div>
+            <input type="checkbox" id="include-return-value-checkbox" />
+            <label for="include-return-value-checkbox">Include Return Value</label>
+        </div>
+        <div>
+            <input type="checkbox" id="include-local-variables-checkbox" />
+            <label for="include-local-variables-checkbox">Local Variables</label>
+        </div>
+
+        <!-- If local variables are checked, display a place to list them -->
+        <div id="local-variables-section" style="display: none;">
+            <p>Specify local variables (one per line):</p>
+            <textarea id="local-variables-input" rows="5" cols="50" placeholder="e.g. x&#10;y&#10;counter"></textarea>
+        </div>
+        <br>
+
         <button id="start-visualization-button">Start Visualization</button>
     </div>
 
@@ -22,8 +41,15 @@
         <div class="container">
             <!-- Left Panel: Stack of To-Do Lists -->
             <div class="left-panel">
+
+                <!-- Show most recent return value if user included return-value option -->
+                <div id="most-recent-return-value-container" style="display: none;">
+                    <h2>Most Recent Return Value</h2>
+                    <div id="return-value-display">(none)</div>
+                </div>
+
                 <div id="stack-container">
-                    <!-- To-do lists will be dynamically added here -->
+                    <!-- To-do lists (function calls) will be dynamically added here -->
                 </div>
             </div>
 
